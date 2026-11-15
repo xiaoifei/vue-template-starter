@@ -1,0 +1,11 @@
+{
+  // 根配置只负责把浏览器代码和 Node/Vite 配置分成两个独立 TypeScript 项目。
+  "files": [],
+  // 子项目引用：app 配置检查 src；node 配置检查 vite.config.ts 等工具配置。
+  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
+  "compilerOptions": {
+    // 让 @/xxx 在 TypeScript 与 shadcn-vue 组件中指向 src/xxx。
+    "baseUrl": ".",
+    "paths": { "@/*": ["./src/*"] }
+  }
+}

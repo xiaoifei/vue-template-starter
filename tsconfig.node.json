@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    // Vite 配置运行于 Node 环境，指定现代 JS 目标。
+    "target": "ES2022",
+    // 项目引用要求子项目为 composite。
+    "composite": true,
+    // 工具配置也只做类型检查，不生成编译文件。
+    "noEmit": true,
+    // 忽略第三方声明文件内部检查。
+    "skipLibCheck": true,
+    // Node 项目的增量编译状态文件位置。
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    // Vite 配置本身使用 ES 模块和打包器解析规则。
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    // 加载 Node.js API 的类型定义。
+    "types": ["node"],
+    // 工具代码同样启用严格类型检查。
+    "strict": true
+  },
+  // 需要检查的构建与 lint 配置文件。
+  "include": ["vite.config.ts", "eslint.config.js"]
+}
