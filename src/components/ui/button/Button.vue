@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { cn } from '@/utils/cn'
+import { cn } from '@/lib/utils'
 
 type ButtonVariant = 'default' | 'secondary' | 'outline' | 'ghost' | 'destructive'
 const props = withDefaults(
