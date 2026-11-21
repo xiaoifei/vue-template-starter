@@ -1,0 +1,27 @@
+{
+  "extends": ["stylelint-config-recommended"],
+  "ignoreFiles": ["dist/**", "coverage/**", "node_modules/**"],
+  "rules": {
+    "no-descending-specificity": true,
+    "declaration-no-important": true,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "theme", "custom-variant", "utility", "source", "plugin",
+          "apply", "layer", "tailwind", "variant"
+        ]
+      }
+    ],
+    "at-rule-prelude-no-invalid": [
+      true,
+      { "ignoreAtRules": ["apply", "theme", "custom-variant", "utility", "source", "plugin", "variant"] }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.vue"],
+      "customSyntax": "postcss-html"
+    }
+  ]
+}

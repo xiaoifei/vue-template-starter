@@ -9,6 +9,12 @@ export default [
   js.configs.recommended,
   ...vue.configs['flat/recommended'],
   {
+    files: ['src/components/ui/**/*.vue'],
+    rules: {
+      'vue/require-default-prop': 'off',
+    },
+  },
+  {
     files: ['**/*.ts', '**/*.vue'],
     languageOptions: {
       parser: vueParser,
@@ -25,6 +31,8 @@ export default [
       ...tsPlugin.configs.recommended.rules,
       '@typescript-eslint/no-explicit-any': 'warn',
       'vue/multi-word-component-names': 'off',
+      // ui组件库兼容：类型检查交给 tsc 而非 eslint
+      'no-undef': 'off',
     },
   },
   {
